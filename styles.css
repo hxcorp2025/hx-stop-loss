@@ -1,0 +1,413 @@
+/* ============================================================
+   HX STOP LOSS · Sala de Operação
+   Tokens da direção aprovada (LP_STOPLOSS_DIRECAO_VISUAL.md)
+   ============================================================ */
+:root {
+  --bg-base: #0B0E13;
+  --bg-panel: #141922;
+  --bg-light: #F2EFE9;
+  --bg-light-panel: #E9E4DA;
+  --txt: #EDEDE8;
+  --txt-body: #B9BFC9;
+  --sec: #8A93A3;
+  --dark: #12161D;
+  --dark-sec: #5C574C;
+  --faded: #B4AC9C;
+  --leak: #FF4A3C;
+  --control: #2BD98A;
+  --hair: #232A35;
+  --hair-light: #DAD3C6;
+  --font-display: 'Archivo', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --container: 1440px;
+  --pad-x: clamp(20px, 5vw, 72px);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-base);
+  color: var(--txt);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.container { max-width: var(--container); margin: 0 auto; padding-left: var(--pad-x); padding-right: var(--pad-x); }
+.mono { font-family: var(--font-mono); }
+::selection { background: var(--leak); color: var(--bg-base); }
+
+.section-dark { background: var(--bg-base); color: var(--txt); }
+.section-light { background: var(--bg-light); color: var(--dark); }
+.bordered-top { border-top: 1px solid var(--hair); }
+.bordered-top-light { border-top: 1px solid var(--hair-light); }
+
+/* ---------- tipografia ---------- */
+.h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5.6vw, 4.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+.h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.4vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+.h2-big { font-size: clamp(1.9rem, 4vw, 3.4rem); max-width: 800px; }
+.eyebrow { font-size: 13px; letter-spacing: 0.16em; color: var(--sec); }
+.eyebrow.leak { color: var(--leak); }
+.eyebrow.control { color: var(--control); }
+.eyebrow.dark { color: var(--dark-sec); }
+.eyebrow b { color: var(--leak); font-weight: 500; }
+.body-sec { color: var(--sec); font-size: 16.5px; max-width: 62ch; }
+.body-l { color: var(--txt-body); font-size: 17.5px; }
+.micro { font-size: 12px; line-height: 1.75; letter-spacing: 0.05em; color: var(--sec); }
+
+/* ---------- botões ---------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 18px 36px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.25s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn-light { background: var(--txt); color: var(--bg-base); }
+.btn-light:hover { box-shadow: 0 12px 34px rgba(237, 237, 232, 0.18); }
+.btn-green { background: var(--control); color: var(--bg-base); }
+.btn-green:hover { box-shadow: 0 12px 34px rgba(43, 217, 138, 0.28); }
+
+/* ---------- fio de progresso (viewport) ---------- */
+.progress-thread {
+  position: fixed; top: 0; right: 0; width: 3px; height: 100vh;
+  background: rgba(35, 42, 53, 0.6); z-index: 50; pointer-events: none;
+}
+.progress-thread span {
+  display: block; width: 100%; height: 0%;
+  background: var(--leak);
+  transition: background 0.6s;
+}
+.progress-thread span.healed { background: var(--control); }
+
+/* ---------- reveals ---------- */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ============ DOBRA 01 · HERO ============ */
+.hero { position: relative; overflow: hidden; padding-bottom: clamp(64px, 9vh, 110px); }
+.hero-fio {
+  position: absolute; top: 0; right: 0; height: 100%; width: min(420px, 34vw);
+  pointer-events: none;
+}
+#fioHeroPath { stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: drawFio 2.6s var(--ease) 0.5s forwards; }
+@keyframes drawFio { to { stroke-dashoffset: 0; } }
+.hero-fio circle { opacity: 0; animation: popDot 0.5s ease 2.2s forwards; }
+@keyframes popDot { to { opacity: 1; } }
+
+.nav { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; }
+.logo { font-family: var(--font-display); font-weight: 700; font-size: 21px; letter-spacing: -0.01em; }
+.logo span { color: var(--leak); }
+.nav-tag { font-size: 12px; letter-spacing: 0.14em; color: var(--sec); }
+
+.hero-inner { padding-top: clamp(72px, 13vh, 132px); }
+.hero .eyebrow { margin-bottom: 30px; }
+
+.h1 .line { display: block; overflow: hidden; }
+.h1 .line > span { display: inline-block; transform: translateY(110%); animation: lineUp 1s var(--ease) forwards; }
+.h1 .line:nth-child(1) > span { animation-delay: 0.15s; }
+.h1 .line:nth-child(2) > span { animation-delay: 0.3s; }
+.h1 .line:nth-child(3) > span { animation-delay: 0.45s; }
+@keyframes lineUp { to { transform: translateY(0); } }
+.line-indent { padding-left: clamp(0px, 8vw, 120px); }
+.line-dim > span { color: var(--sec); }
+.leak-word {
+  font-style: normal; color: var(--leak); position: relative; white-space: nowrap;
+}
+.leak-word::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0.04em; height: 0.06em;
+  background: var(--leak); border-radius: 3px;
+  transform: scaleX(0); transform-origin: left;
+  animation: underlineIn 0.7s var(--ease) 1.3s forwards;
+}
+@keyframes underlineIn { to { transform: scaleX(1); } }
+
+.hero-sub { margin-top: 38px; max-width: 580px; color: var(--txt-body); font-size: 18.5px; }
+.hero-ctas { margin-top: 44px; display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
+.hero-scroll {
+  display: inline-block; margin-top: clamp(48px, 8vh, 88px);
+  font-size: 12px; letter-spacing: 0.12em; color: var(--sec); text-decoration: none;
+  transition: color 0.3s;
+}
+.hero-scroll:hover { color: var(--txt); }
+
+/* ============ DOBRA 02 · MARQUEE ============ */
+.marquee-band { border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); padding: 18px 0; }
+.marquee { overflow: hidden; }
+.marquee-track {
+  display: inline-flex; align-items: center; gap: 28px; white-space: nowrap;
+  font-size: 13.5px; letter-spacing: 0.08em; color: var(--sec);
+  animation: marquee 36s linear infinite;
+  will-change: transform;
+}
+.marquee-track .hl { color: var(--txt); }
+.marquee-track i { color: var(--leak); font-style: normal; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+/* ============ DOBRA 03 · PROBLEMA ============ */
+.problema { padding: clamp(72px, 11vh, 130px) 0; }
+.split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 88px); align-items: start; }
+.split-left .h2 { margin-bottom: 30px; }
+.log { list-style: none; }
+.log li {
+  display: flex; align-items: center; gap: 16px;
+  padding: 17px 0; border-bottom: 1px solid var(--hair);
+  font-size: 14.5px; line-height: 1.5; color: var(--txt-body);
+  opacity: 0.18; transform: translateX(14px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.log li::before {
+  content: ''; flex: 0 0 10px; height: 14px; background: var(--leak);
+}
+.log li.lit { opacity: 1; transform: none; }
+.log li.lit ~ li.lit { }
+.log-close { margin-top: 30px; color: var(--txt-body); font-size: 16.5px; max-width: 56ch; }
+.log-close em { font-style: normal; font-family: var(--font-display); font-weight: 700; color: var(--leak); }
+
+/* ============ DOBRA 04 · COMPARATIVO ============ */
+.comparativo { padding: clamp(72px, 11vh, 130px) 0; }
+.comparativo .h2 { max-width: 880px; margin-bottom: 54px; }
+.cols { display: grid; grid-template-columns: 0.85fr 0.85fr 1.3fr; gap: 20px; align-items: end; }
+.col {
+  background: var(--bg-light-panel); border-radius: 16px; padding: 30px 28px;
+  color: var(--dark-sec); font-size: 15px; line-height: 1.6;
+}
+.col h3 { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; color: var(--faded); margin-bottom: 12px; }
+.col-hx {
+  background: var(--dark); color: var(--txt-body);
+  border: 1px solid rgba(43, 217, 138, 0.25);
+  padding: 44px 32px;
+}
+.col-hx h3 { color: var(--control); }
+.col-hx p { color: var(--txt); }
+.punch {
+  margin-top: 56px;
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(2rem, 4.6vw, 4rem); letter-spacing: -0.02em; line-height: 1.05;
+}
+.punch span { color: var(--faded); }
+
+/* ============ DOBRA 05 · MÉTODO ============ */
+.metodo { padding: clamp(80px, 12vh, 140px) 0; }
+.metodo .eyebrow { margin-bottom: 22px; }
+.metodo-intro { margin-top: 24px; }
+.grid9 { display: flex; flex-direction: column; gap: 14px; margin-top: 52px; }
+.grid9 .row { display: grid; gap: 14px; }
+.cell {
+  background: var(--bg-panel); border: 1px solid var(--hair); border-radius: 14px;
+  padding: 24px 24px 26px;
+  opacity: 0; transform: translateY(18px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease), border-color 0.35s;
+}
+.cell.in { opacity: 1; transform: none; }
+.cell:hover { border-color: rgba(255, 74, 60, 0.45); }
+.cell-green:hover { border-color: rgba(43, 217, 138, 0.5); }
+.cell .num { display: block; font-size: 13px; color: var(--leak); margin-bottom: 12px; }
+.cell-green .num { color: var(--control); }
+.cell h3 { font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -0.01em; margin-bottom: 8px; }
+.cell p { font-size: 14.5px; line-height: 1.5; color: var(--sec); }
+.metodo-close { margin-top: 44px; max-width: 640px; }
+
+/* ============ DOBRA 06 · COMO FUNCIONA ============ */
+.como { padding: clamp(72px, 11vh, 130px) 0; }
+.como .h2 { margin-bottom: 48px; }
+.timeline { height: 3px; background: var(--hair); border-radius: 2px; overflow: hidden; margin-bottom: 44px; }
+.timeline span {
+  display: block; height: 100%; width: 100%;
+  background: linear-gradient(90deg, var(--leak) 0%, var(--leak) 55%, var(--control) 100%);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 1.6s var(--ease);
+}
+.timeline.in span { transform: scaleX(1); }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.step .num { display: block; font-size: 14px; margin-bottom: 12px; }
+.step .num.leak { color: var(--leak); }
+.step .num.control { color: var(--control); }
+.step h3 { font-family: var(--font-display); font-weight: 600; font-size: 22px; letter-spacing: -0.01em; margin-bottom: 10px; }
+.step p { font-size: 14.5px; line-height: 1.55; color: var(--sec); }
+
+/* ============ DOBRA 07 · ENTREGA ============ */
+.entrega { padding: 0 0 clamp(72px, 11vh, 130px); }
+.entrega-panel {
+  background: var(--bg-panel); border: 1px solid var(--hair); border-radius: 20px;
+  padding: clamp(32px, 5vw, 56px);
+}
+.entrega-panel .h2 { max-width: 700px; margin-bottom: 34px; }
+.checks { list-style: none; }
+.checks li {
+  display: flex; align-items: baseline; gap: 18px;
+  padding: 13px 0; font-size: 16.5px; color: var(--txt-body);
+}
+.checks li::before {
+  content: '✓'; color: var(--control); font-family: var(--font-mono); font-weight: 700;
+  flex: 0 0 auto;
+}
+
+/* ============ DOBRA 08 · PROVAS ============ */
+.provas { padding: clamp(64px, 10vh, 110px) 0; }
+.provas .h2 { margin-bottom: 18px; }
+.marquee-logos { margin-top: 42px; }
+.marquee-logos .marquee-track {
+  gap: 56px; animation-duration: 30s;
+  font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: 0.02em;
+  color: var(--sec); opacity: 0.65;
+}
+
+/* ============ DOBRA 09 · INVESTIMENTO ============ */
+.preco { padding: clamp(72px, 11vh, 130px) 0; }
+.preco .eyebrow { margin-bottom: 22px; }
+.preco .h2 { max-width: 820px; }
+.preco-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(36px, 5vw, 64px); margin-top: 48px; align-items: start; }
+.valor { font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 500; letter-spacing: -0.03em; color: var(--dark); line-height: 1.1; white-space: nowrap; }
+.valor-sub { margin-top: 10px; font-size: 13px; letter-spacing: 0.06em; color: var(--dark-sec); }
+.preco-conds p { color: var(--dark-sec); font-size: 16px; }
+.preco-conds .destaque {
+  margin-top: 20px; font-family: var(--font-display); font-weight: 600;
+  font-size: 20.5px; line-height: 1.4; letter-spacing: -0.005em; color: var(--dark);
+}
+.preco-conds .ancora { margin-top: 20px; font-size: 15px; color: var(--faded); }
+
+/* ============ DOBRA 10 · FIT ============ */
+.fit { padding: 0 0 clamp(72px, 11vh, 130px); }
+.fit .container { padding-top: clamp(56px, 8vh, 90px); }
+.fit .h2 { max-width: 760px; margin-bottom: 48px; }
+.fit-cols { display: grid; grid-template-columns: 1.35fr 1fr; gap: 24px; align-items: start; }
+.fit-col { border-radius: 16px; padding: 34px 32px; }
+.fit-yes { background: #FFFFFF; }
+.fit-no { background: var(--bg-light-panel); }
+.fit-col h3 { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; margin-bottom: 20px; }
+.fit-yes h3 { color: #1DA46A; }
+.fit-no h3 { color: var(--leak); }
+.fit-col ul { list-style: none; }
+.fit-col li { padding: 8px 0; line-height: 1.55; }
+.fit-yes li { font-size: 16.5px; color: var(--dark); }
+.fit-yes li::before { content: '→  '; color: #1DA46A; font-family: var(--font-mono); }
+.fit-no li { font-size: 14.5px; color: var(--dark-sec); }
+.fit-no li::before { content: '×  '; color: var(--leak); font-family: var(--font-mono); }
+
+/* ============ DOBRA 11 · APLICAÇÃO ============ */
+.aplicacao { padding: clamp(80px, 12vh, 140px) 0; }
+.aplicacao .eyebrow { margin-bottom: 22px; }
+.aplicacao .h2 { margin-bottom: 26px; }
+.form {
+  background: var(--bg-panel); border: 1px solid var(--hair); border-radius: 20px;
+  padding: clamp(28px, 4vw, 44px);
+  display: flex; flex-direction: column; gap: 18px;
+}
+.field { display: flex; flex-direction: column; gap: 9px; border: 0; }
+.field label, .field legend { font-size: 11.5px; letter-spacing: 0.1em; color: var(--sec); }
+.field input, .field textarea {
+  background: var(--bg-base); border: 1px solid var(--hair); border-radius: 10px;
+  padding: 14px 16px; color: var(--txt); font-family: var(--font-body); font-size: 15px;
+  outline: none; transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%; resize: vertical;
+}
+.field input:focus, .field textarea:focus {
+  border-color: var(--control); box-shadow: 0 0 0 3px rgba(43, 217, 138, 0.12);
+}
+.field input.error, .field textarea.error { border-color: var(--leak); }
+.pills { display: block; }
+.pills legend { margin-bottom: 11px; }
+.pills button {
+  display: inline-block; width: auto;
+  font-family: var(--font-body); font-size: 13.5px; color: var(--txt-body);
+  background: var(--bg-base); border: 1px solid var(--hair); border-radius: 999px;
+  padding: 9px 15px; margin: 0 8px 8px 0; cursor: pointer;
+  transition: all 0.25s;
+}
+.pills button:hover { border-color: var(--sec); }
+.pills button.active { background: var(--txt); border-color: var(--txt); color: var(--bg-base); font-weight: 500; }
+.form .btn { margin-top: 8px; width: 100%; }
+.form-note { font-size: 10.5px; letter-spacing: 0.06em; text-align: center; opacity: 0.8; }
+.form-feedback { font-size: 12.5px; text-align: center; min-height: 1em; }
+.form-feedback.ok { color: var(--control); }
+.form-feedback.err { color: var(--leak); }
+
+/* ============ DOBRA 12 · FAQ ============ */
+.faq { padding: clamp(64px, 10vh, 110px) 0; }
+.faq .h2 { margin-bottom: 40px; }
+.faq-list details { border-bottom: 1px solid var(--hair); }
+.faq-list summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  padding: 22px 0; cursor: pointer; list-style: none;
+  font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -0.005em;
+  transition: color 0.25s;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary:hover { color: var(--control); }
+.faq-list .chev::after { content: '+'; color: var(--sec); font-size: 17px; }
+.faq-list details[open] .chev::after { content: '–'; color: var(--control); }
+.faq-list details p { padding: 0 0 24px; max-width: 72ch; color: var(--sec); font-size: 15.5px; }
+
+/* ============ DOBRA 13 · CTA FINAL ============ */
+.cta-final { position: relative; overflow: hidden; padding: clamp(110px, 18vh, 190px) 0; text-align: center; }
+.cta-fio { position: absolute; top: 0; left: 0; height: 100%; width: min(420px, 30vw); pointer-events: none; opacity: 0.85; }
+#fioCtaPath { stroke-dasharray: 900; stroke-dashoffset: 900; transition: stroke-dashoffset 2.2s var(--ease); }
+.cta-final.in #fioCtaPath { stroke-dashoffset: 0; }
+.cta-inner { display: flex; flex-direction: column; align-items: center; gap: 34px; }
+.cta-inner .h1 { font-size: clamp(2.1rem, 5vw, 4.4rem); }
+.cta-inner .body-sec { max-width: 640px; }
+
+/* ============ FOOTER ============ */
+.footer { padding: 30px 0; }
+.footer .container { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.footer .logo { font-size: 16px; }
+.footer p { font-size: 11px; letter-spacing: 0.06em; color: var(--sec); }
+
+/* ============ RESPONSIVO ============ */
+@media (max-width: 1024px) {
+  .cols { grid-template-columns: 1fr 1fr; }
+  .col-hx { grid-column: 1 / -1; }
+  .steps { grid-template-columns: 1fr 1fr; row-gap: 36px; }
+  .split { grid-template-columns: 1fr; }
+  .grid9 .row { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .nav { padding-top: 24px; }
+  .nav-tag { display: none; }
+  .hero-inner { padding-top: 64px; }
+  .line-indent { padding-left: 0; }
+  .hero-fio { opacity: 0.5; }
+  .cols { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .grid9 .row { grid-template-columns: 1fr !important; }
+  .fit-cols { grid-template-columns: 1fr; }
+  .preco-row { grid-template-columns: 1fr; }
+  .hero-ctas .btn { width: 100%; }
+  .cta-fio { display: none; }
+}
+
+/* ============ ACESSIBILIDADE ============ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal, .cell, .log li { opacity: 1 !important; transform: none !important; }
+  .h1 .line > span { transform: none; }
+  #fioHeroPath, #fioCtaPath { stroke-dashoffset: 0 !important; }
+  .timeline span { transform: scaleX(1); }
+  html { scroll-behavior: auto; }
+}
