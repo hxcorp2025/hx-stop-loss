@@ -285,6 +285,21 @@ section { padding: clamp(64px, 9vh, 104px) 0; }
   .pull { padding-left: 18px; }
 }
 
+/* ============ PÁGINA DE APLICAÇÃO (/aplicacao/) ============ */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1020px; margin: 48px auto 0; }
+.stat {
+  background: var(--navy-2); border: 1px solid var(--line-dark); border-radius: 14px;
+  padding: 30px 28px; text-align: center;
+}
+.stat strong { display: block; font-size: 19px; line-height: 1.35; color: #fff; letter-spacing: -0.01em; }
+.stat span { display: block; margin-top: 10px; font-size: 14.5px; color: var(--sec-light); line-height: 1.55; }
+.provas .stats + .pendencia { margin-top: 36px; }
+.fit .fit-nota { margin-top: 40px; text-align: center; font-weight: 600; color: var(--ink); }
+
+@media (max-width: 640px) {
+  .stats { grid-template-columns: 1fr; }
+}
+
 /* ============ ACESSIBILIDADE ============ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
