@@ -53,7 +53,7 @@
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
   // stagger nos grids e listas (delay incremental por irmão)
-  ['.grid9 .card', '.steps .step', '.cenas .cena', '.checklist li', '.alts .alt', '.logos span', '.stats .stat'].forEach(function (sel) {
+  ['.grid9 .card', '.steps .step', '.cenas .cena', '.checklist li', '.alts .alt', '.logos span', '.stats .stat', '.quotes .quote'].forEach(function (sel) {
     document.querySelectorAll(sel).forEach(function (el, i) {
       el.style.transitionDelay = Math.min(i * 70, 420) + 'ms';
     });
