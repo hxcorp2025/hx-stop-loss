@@ -30,7 +30,12 @@
       </nav>
       <div class="hero-inner">
         <p class="eyebrow reveal">HX STOP LOSS · INTERVENÇÃO OPERACIONAL</p>
-        <h1 class="reveal">Lucrar mais nem sempre é vender mais. Quase sempre é parar de <span class="serif gold">rasgar o dinheiro</span> que você já investe.</h1>
+        <h1 class="reveal" id="hvH1" title="Clique para ver a próxima variação">Lucrar mais nem sempre é vender mais. Quase sempre é parar de <span class="serif gold">rasgar o dinheiro</span> que você já investe.</h1>
+        <div class="hv-controls reveal" aria-label="Variações de headline (modo apresentação)">
+          <button type="button" class="hv-btn" id="hvPrev" aria-label="Variação anterior">‹</button>
+          <span class="hv-label" id="hvLabel">Variação A · 1/10</span>
+          <button type="button" class="hv-btn" id="hvNext" aria-label="Próxima variação">›</button>
+        </div>
         <p class="hero-sub reveal">Uma intervenção de 30 a 60 dias: um time sênior da HX entra na sua operação, encontra onde o investimento está sendo desperdiçado entre estratégia, funis, mídia e vendas, e conserta. Executando, não ensinando.</p>
         <div class="hero-cta reveal">
           <a href="#aplicacao" class="btn">Aplicar para o diagnóstico</a>
@@ -268,5 +273,6 @@
   </footer>
 
   <script src="../script.js" defer></script>
+  <script src="hero.js" defer></script>
 </body>
 </html>
