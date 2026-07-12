@@ -44,9 +44,9 @@
 
   /* ---------- carrossel de headlines (modo apresentação) ---------- */
   var VARIANTES = [
+    { id: '3 · Proclamação', html: 'A maioria das operações digitais desperdiça, todo mês, <em>mais lucro do que gastaria pra consertar o problema de vez.</em>' },
     { id: '1 · Mecanismo', html: 'Todo trader profissional opera com um stop loss. A sua operação de marketing <em>não tem nenhum.</em>' },
     { id: '2 · Segredo', html: 'Existe um tipo de prejuízo na sua operação que <em>nenhum dashboard te mostra.</em>' },
-    { id: '3 · Proclamação', html: 'A maioria das operações digitais desperdiça, todo mês, <em>mais lucro do que gastaria pra consertar o problema de vez.</em>' },
     { id: '4 · História', html: 'No maior lançamento da história do Brasil, eu descobri onde o dinheiro de verdade se ganha ou se perde. <em>Não é na oferta. É dentro da operação.</em>' },
     { id: '5 · Problema', html: 'Você não precisa de mais tráfego. Precisa <em>parar de perder o que o tráfego que você já paga já está trazendo.</em>' }
   ];
