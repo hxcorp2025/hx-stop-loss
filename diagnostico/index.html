@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HX · Levante o teto de aquisição da sua operação</title>
+  <meta name="description" content="Quem pode pagar mais caro por um cliente e ainda lucrar domina o mercado. A HX entra na sua operação, levanta o seu teto de aquisição e te dá munição pra escalar além do concorrente. Executando, não ensinando.">
+  <meta property="og:title" content="HX · Levante o teto de aquisição da sua operação">
+  <meta property="og:description" content="Diagnóstico de operação: descubra com número o seu teto de aquisição hoje e o quanto dá pra levantar. Um time que geriu R$ 250 mi+ em mídia.">
+  <meta name="theme-color" content="#06090F">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ HERO (form-first) ============ -->
+  <header class="hero" id="topo">
+    <div class="hero-glow" aria-hidden="true"><i></i></div>
+    <div class="wrap">
+      <nav class="nav">
+        <div class="logo">HX</div>
+        <div class="nav-links">
+          <a href="#metodo">O método</a>
+          <a href="#prova">Prova</a>
+          <a href="#oferta">Como começa</a>
+        </div>
+        <a href="#aplicacao" class="btn-ghost">Pedir diagnóstico</a>
+      </nav>
+
+      <div class="hero-grid">
+        <div class="hero-lead">
+          <p class="eyebrow reveal">Para donos que faturam R$ 100 mil+/mês e travaram na escala</p>
+          <h1 class="reveal" id="hvH1" title="Clique para ver a próxima variação">A maioria das operações digitais desperdiça, todo mês, <em>mais lucro do que gastaria pra consertar o problema de vez.</em></h1>
+          <div class="hv-controls reveal" aria-label="Variações de headline (modo apresentação)">
+            <button type="button" class="hv-btn" id="hvPrev" aria-label="Variação anterior">‹</button>
+            <span class="hv-label" id="hvLabel">Lead <b>1 · Proclamação</b> · 1/6</span>
+            <button type="button" class="hv-btn" id="hvNext" aria-label="Próxima variação">›</button>
+          </div>
+          <p class="hero-sub reveal">Todo negócio tem um teto invisível: o quanto ele pode investir pra conquistar um cliente antes de dar prejuízo. Quem tem o teto mais alto escala mais e domina o mercado. A HX entra na sua operação, levanta esse teto e te dá munição pra crescer além do concorrente. Executando, não ensinando.</p>
+          <div class="hero-trust reveal">
+            <span><b>R$ 250 mi+</b> em mídia sob gestão</span>
+            <span><b>R$ 128 mi</b> em 50 dias no maior lançamento da AL</span>
+            <span><b>150+</b> lançamentos executados</span>
+          </div>
+        </div>
+
+        <div class="hero-form-wrap reveal" id="aplicacao">
+          <form class="hero-form" id="formAplicacao" novalidate>
+            <p class="hf-kick">Peça o diagnóstico</p>
+            <p class="hf-sub">Um sócio da HX analisa a sua operação pessoalmente e responde com prioridade.</p>
+            <div class="field">
+              <label for="fNome">Nome</label>
+              <input type="text" id="fNome" name="nome" placeholder="Seu nome" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="fZap">WhatsApp</label>
+              <input type="tel" id="fZap" name="whatsapp" placeholder="(00) 0 0000 0000" required autocomplete="tel" inputmode="tel">
+            </div>
+            <div class="field">
+              <label for="fInsta">Instagram ou site do negócio</label>
+              <input type="text" id="fInsta" name="instagram_site" placeholder="@">
+            </div>
+            <fieldset class="field pills" data-name="faturamento">
+              <legend>Faturamento mensal</legend>
+              <button type="button">Até R$ 100 mil</button>
+              <button type="button">R$ 100 a 300 mil</button>
+              <button type="button">R$ 300 mil a 1 mi</button>
+              <button type="button">Acima de R$ 1 mi</button>
+            </fieldset>
+            <fieldset class="field pills" data-name="investimento_aquisicao">
+              <legend>Investimento mensal em aquisição</legend>
+              <button type="button">Até R$ 10 mil</button>
+              <button type="button">R$ 10 a 50 mil</button>
+              <button type="button">R$ 50 a 200 mil</button>
+              <button type="button">Acima de R$ 200 mil</button>
+            </fieldset>
+            <button type="submit" class="btn btn-full" id="btnEnviar">Quero o diagnóstico</button>
+            <p class="form-note">Poucas operações por vez, por escolha. Seus dados ficam com a HX, fora de qualquer lista.</p>
+            <p class="form-feedback" id="formFeedback" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ LOGOBAR ============ -->
+  <div class="logobar">
+    <div class="wrap logos reveal">
+      <span class="cap">Trajetória construída dentro de</span>
+      <span>BILHON</span><span>V4 COMPANY</span><span>NÔMADE MILIONÁRIO</span><span>FACULDADE VP</span><span>PIX DO MILHÃO</span><span>SPOTIFY</span>
+    </div>
+  </div>
+
+  <!-- ============ PROVA ============ -->
+  <section class="provas" id="prova">
+    <div class="wrap">
+      <p class="eyebrow kick reveal">Quem está levantando o teto</p>
+      <div class="bignum reveal">
+        <div class="n" data-count="250" data-suffix="">R$ 250 <em>mi+</em></div>
+        <p class="cap">investidos em mídia sob gestão</p>
+      </div>
+      <div class="stat-row">
+        <div class="cell reveal"><strong>R$ 128 mi em 50 dias</strong><span>Liderança de mídia no maior lançamento da América Latina (Nômade Milionário)</span></div>
+        <div class="cell reveal"><strong>Meio bilhão</strong><span>de faturamento gerado nos projetos sob gestão</span></div>
+        <div class="cell reveal"><strong>150+ lançamentos</strong><span>executados de ponta a ponta, de 6 a 8 dígitos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MECANISMO (Teto de Aquisição) ============ -->
+  <section class="mecanismo" id="metodo">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">O método</p>
+        <h2>Como a HX <span class="i">levanta o seu teto.</span></h2>
+        <p class="sub">Teto de aquisição é o quanto você pode pagar pra conquistar um cliente e ainda lucrar. Quanto mais alto o seu, mais forte você escala, e mais difícil fica pro concorrente competir com você. A HX levanta o seu em três movimentos, com estratégia e execução no mesmo time.</p>
+      </div>
+      <div class="steps steps-3">
+        <article class="step reveal">
+          <span class="snum">1</span>
+          <h3>Leitura</h3>
+          <p>Instala o dado real na sua operação: de onde vem cada venda, quanto cada real de mídia devolve, onde está o seu teto hoje. Não é pra achar defeito. É pra te dar munição de escalar sem medo, com número em vez de palpite.</p>
+        </article>
+        <article class="step reveal">
+          <span class="snum">2</span>
+          <h3>Esteira</h3>
+          <p>Reconstrói a sua oferta num ecossistema de ascensão: o mesmo cliente passa a comprar de novo e a valer mais ao longo do tempo. Com o cliente valendo mais, o teto sobe, e o CAC que hoje aperta deixa de apertar.</p>
+        </article>
+        <article class="step reveal">
+          <span class="snum">3</span>
+          <h3>Escala</h3>
+          <p>Com dado limpo e teto alto, você passa a poder gastar mais que o concorrente pra ganhar o mesmo cliente, e lucrar fazendo isso. É aí que você domina o leilão do tráfego e escala por cima de quem trava.</p>
+        </article>
+      </div>
+      <p class="fecho reveal">Repara: escala é consequência. Todo mundo vende escala. Ninguém entra na sua operação e reconstrói o seu dado e a sua esteira pra aumentar o quanto você pode pagar por cliente. Quem ensina não faz isso. A HX faz.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDER / AUTORIDADE ============ -->
+  <section class="founder">
+    <div class="wrap">
+      <div class="founder-grid">
+        <div class="founder-portrait imgslot reveal"><span>Foto profissional<br>Matheus Barbosa</span></div>
+        <div class="founder-body reveal">
+          <p class="eyebrow">Quem está por trás</p>
+          <h2>O nível técnico <span class="i">tem nome.</span></h2>
+          <p>Matheus Barbosa liderou a mídia do maior lançamento da história da América Latina: R$ 128 milhões em 50 dias, o Nômade Milionário, do Thiago Finch. Head de Mídia Paga na Bilhon. Head de Tráfego na V4 Company, gerenciando os maiores projetos da rede, incluindo a própria V4.</p>
+          <p>Mais de R$ 250 milhões investidos em mídia e mais de 150 lançamentos sob a gestão dele.</p>
+          <p class="cand">Essa trajetória foi construída dentro de operações gigantes. A HX existe pra instalar exatamente esse nível de precisão dentro de negócios selecionados.</p>
+        </div>
+      </div>
+
+      <div class="quotes">
+        <figure class="quote reveal">
+          <blockquote>"A precisão técnica que o Barbosa trouxe à equipe foi um dos pontos-chave para escalar uma cifra absurda mantendo o ROI altíssimo."</blockquote>
+          <figcaption><span class="av" aria-hidden="true"></span><span><strong>@thiagofinch</strong><span>Fundador da Bilhon</span></span></figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <blockquote>"Vi o domínio, a clareza e a organização que o Matheus teve para lidar com os anúncios, com resultado muito fora da curva, tanto de aquisição quanto de qualificação."</blockquote>
+          <figcaption><span class="av" aria-hidden="true"></span><span><strong>@claudio.camozzi</strong><span>Conselheiro de negócios do Thiago Finch</span></span></figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <blockquote>"Saímos de 6 para 7 dígitos por mês graças às estratégias de escala e aos funis certos. Coloquei as mãos atrás da cabeça quando começamos a vender no automático."</blockquote>
+          <figcaption><span class="av" aria-hidden="true"></span><span><strong>@vpnutricaofuncional</strong><span>Faculdade VP</span></span></figcaption>
+        </figure>
+      </div>
+      <p class="flip reveal">Agora imagine esse mesmo nível de precisão apontado pra <em>levantar o seu teto.</em></p>
+    </div>
+  </section>
+
+  <!-- ============ OFERTA (garantia creditável) ============ -->
+  <section class="oferta" id="oferta">
+    <div class="wrap">
+      <div class="oferta-card reveal">
+        <p class="eyebrow">Como começa</p>
+        <h2>Você só paga o projeto <span class="i">depois de ver o número.</span></h2>
+        <p>Começa pela Leitura: um raio-x da sua operação que entrega, com número, qual é o seu teto de aquisição hoje e o quanto dá pra levantar. A Leitura é paga e abate integralmente no projeto se você seguir. Você não compra promessa. Compra o diagnóstico, vê o tamanho da oportunidade na mesa, e decide.</p>
+        <p class="oferta-punch">Hoje você trava a verba num teto porque acima dele começa a dar prejuízo. A HX levanta esse teto. Você passa a escalar além dele ainda lucrando.</p>
+        <p class="oferta-preco">Projetos começam em <b>R$ 20 mil</b>, dimensionados ao tamanho da operação e ancorados no teto que a gente destrava, não no que você gasta hoje.</p>
+        <a href="#aplicacao" class="btn">Pedir o diagnóstico</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FIT ============ -->
+  <section class="fit">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Seleção</p>
+        <h2>Pra quem o diagnóstico foi desenhado</h2>
+      </div>
+      <div class="fit-cols">
+        <div class="fit-col sim reveal">
+          <h3>Faz sentido se</h3>
+          <ul>
+            <li>Você já fatura R$ 100 mil+/mês e investe em aquisição todo mês.</li>
+            <li>Você sente que travou num teto e não consegue escalar sem perder margem.</li>
+            <li>Você vê concorrente do mesmo tamanho escalando mais que você.</li>
+            <li>Você quer estratégia e execução dentro de casa, não mais uma opinião.</li>
+          </ul>
+        </div>
+        <div class="fit-col nao reveal">
+          <h3>Ainda não faz sentido se</h3>
+          <ul>
+            <li>O negócio ainda não vende online.</li>
+            <li>Não existe investimento em aquisição acontecendo.</li>
+            <li>O que você procura agora é aprender, não ter a operação feita.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="fit-nota reveal">Poucas operações por vez, por escolha. É o que torna a imersão possível.</p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Perguntas frequentes</p>
+        <h2>O que todo dono pergunta antes</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details open>
+          <summary>Isso é uma agência?</summary>
+          <p>Não. Agência escala em número de clientes; a HX trabalha com poucas operações por vez, imersa, com estratégia e execução juntas. É intervenção, não mensalidade eterna.</p>
+        </details>
+        <details>
+          <summary>Como vocês levantam o meu teto?</summary>
+          <p>Com dado real (você para de escalar no escuro e passa a saber exatamente o que empurrar) e com uma esteira de ofertas que faz cada cliente valer mais ao longo do tempo. Cliente valendo mais é teto mais alto: você pode pagar mais caro pra conquistar cada um e ainda lucrar.</p>
+        </details>
+        <details>
+          <summary>Preciso abrir meus números?</summary>
+          <p>Sim, com NDA assinado. Não dá pra calcular o seu teto no escuro, e é justamente operar no escuro que trava a sua escala hoje.</p>
+        </details>
+        <details>
+          <summary>Em quanto tempo vejo diferença?</summary>
+          <p>A intervenção dura de 30 a 60 dias e boa parte das correções gera efeito ainda dentro dela.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL ============ -->
+  <section class="final">
+    <div class="wrap">
+      <h2 class="reveal">Enquanto você trava no teto de hoje, alguém do seu tamanho está pagando mais caro pra ganhar o mesmo cliente, <span class="i">e escalando por cima de você.</span></h2>
+      <p class="reveal">A HX levanta o seu teto e te devolve o jogo. Peça o diagnóstico e veja, com número, o tamanho da oportunidade que está travada na sua operação.</p>
+      <a href="#aplicacao" class="btn reveal">Pedir o diagnóstico</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="logo">HX</div>
+      <p>HX CORP · Operação de crescimento para negócios digitais</p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
